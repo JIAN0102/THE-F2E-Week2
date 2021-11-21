@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Poppins&display=swap");
+body { font-family: 'Poppins','Noto Sans TC', sans-serif; overflow-x: hidden; }
+
+input:focus, button:focus, textarea:focus, select:focus { outline: none; }
+
+input { -webkit-appearance: none; border-radius: 0; }
+
+select { -webkit-appearance: none; border-radius: 0; }
+
+.btn-primary { position: relative; -webkit-transition: all .3s; transition: all .3s; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-color: #FF4128; }
+
+.btn-primary::before { content: ''; position: absolute; z-index: -1; left: 0; top: 0; bottom: 0; right: 0; -webkit-transition: all .3s; transition: all .3s; background-color: #FF4128; border-radius: 100px; }
+
+.btn-primary::after { content: ''; position: absolute; z-index: -1; left: 1px; top: 1px; bottom: 1px; right: 1px; -webkit-transition: all .3s; transition: all .3s; background-color: #ffffff; border-radius: 100px; }
+
+.btn-primary:hover { text-shadow: 0 0 0 white; }
+
+.btn-primary:hover::before { background-color: #FF4128; }
+
+.btn-primary:hover::after { left: 100%; top: 100%; bottom: 100%; right: 100%; }
+
+.btn-secondary { position: relative; -webkit-transition: all .3s; transition: all .3s; -webkit-background-clip: text; -webkit-text-fill-color: #8C919B; background-color: #ECEEF0; }
+
+.btn-secondary::before { content: ''; position: absolute; z-index: -1; left: 0; top: 0; bottom: 0; right: 0; -webkit-transition: all .3s; transition: all .3s; background-color: #ECEEF0; border-radius: 100px; }
+
+.btn-secondary::after { content: ''; position: absolute; z-index: -1; left: 100%; top: 100%; bottom: 100%; right: 100%; -webkit-transition: all .3s; transition: all .3s; background-color: #ECEEF0; border-radius: 100px; }
+
+.btn-secondary:hover { text-shadow: 0 0 0 white; }
+
+.btn-secondary:hover::before { background-color: #8C919B; }
+
+.btn-secondary:hover::after { left: 1px; top: 1px; bottom: 1px; right: 1px; }

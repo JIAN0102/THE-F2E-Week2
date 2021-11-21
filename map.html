@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>想去哪裡，隨時隨地。</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css">
+  </link>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css">
+  </link>
+  <link rel="stylesheet" href="dist/tailwind.css">
+  <link rel="stylesheet" href="dist/css/all.min.css">
+</head>
+
+<body>
+
+  <div id="app">
+    <header class="fixed top-0 left-0 w-full flex justify-between items-center z-9999 px-7.5 py-4">
+      <a href="index.html">
+        <img src="img/logo.svg" alt="logo">
+      </a>
+      <div class="bg-white rounded-full shadow-header">
+        <div class="flex px-4 py-3">
+          <a href="javascript:;"
+            class="flex justify-center items-center text-white bg-primary rounded-full min-w-37.5 px-4 py-3 mr-2.5">
+            租還 Ubike
+          </a>
+          <a href="javascript:;"
+            class="duration-300 flex justify-center items-center text-gray-200 bg-gray-100 rounded-full min-w-37.5 px-4 py-3 hover:text-white hover:bg-primary">
+            自行車路線
+          </a>
+        </div>
+      </div>
+      <a href="javascript:;"
+        class="relative bg-white border-2 border-primary rounded-20 transform duration-300 w-15 h-15 | hover:-translate-y-1">
+        <span class="text-xs text-secondary flex justify-center items-center h-full tracking-2.4 -mr-0.6">附近<br>美食
+        </span>
+      </a>
+    </header>
+    <div id="map" class="h-screen"></div>
+    <div
+      class="fixed bottom-5 left-1/2 transform -translate-x-1/2 z-9999 shadow-header rounded-full overflow-hidden w-full max-w-120">
+      <div class="relative">
+        <select class="block w-full px-8 py-4 placeholder-gray-200" v-model="nowCity" @change="changeCity">
+          <option :value="null">選擇縣市</option>
+          <option :value="item.nameEn" v-for="item in cities">{{ item.name }}</option>
+        </select>
+        <div class="absolute top-1/2 right-1.5 transform -translate-y-1/2 flex justify-center items-center">
+          <button type="button" class=" bg-primary rounded-full h-10.5 duration-300 px-6 mr-1.5 hover:opacity-70">
+            <img src="img/icon-search.svg" alt="icon-search">
+          </button>
+          <button type="button"
+            class="flex justify-center items-center w-10.5 h-10.5 bg-primary rounded-full duration-300 hover:opacity-70">
+            <img src="img/icon-location.svg" alt="icon-location">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/3.2.0/sha.js"></script>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
+  <script
+    src="https://unpkg.com/leaflet.markercluster.layersupport@2.0.1/dist/leaflet.markercluster.layersupport.js"></script>
+
+
+  <script type="module">
+    import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.1.4/vue.esm-browser.min.js';
+    createApp({
+      data() {
+        return {
+          data: [],
+          currentData: [],
+          map: null,
+          cities: [
+            {
+              name: '臺北市',
+              nameEn: 'Taipei',
+            },
+            {
+              name: '新北市',
+              nameEn: 'NewTaipei',
+            },
+            {
+              name: '桃園市',
+              nameEn: 'Taoyuan',
+            },
+            {
+              name: '臺中市',
+              nameEn: 'Taichung',
+            },
+            {
+              name: '臺南市',
+              nameEn: 'Tainan',
+            },
+            {
+              name: '高雄市',
+              nameEn: 'Kaohsiung',
+            },
+            {
+              name: '新竹市',
+              nameEn: 'Hsinchu',
+            },
+            {
+              name: '苗栗縣',
+              nameEn: 'MiaoliCounty',
+            },
+            {
+              name: '嘉義市',
+              nameEn: 'Chiayi',
+            },
+            {
+              name: '屏東縣',
+              nameEn: 'PingtungCounty',
+            },
+            {
+              name: '金門縣',
+              nameEn: 'KinmenCounty',
+            }
+          ],
+          nowCity: 'Taichung',
+        };
+      },
+      methods: {
+        getAuthorizationHeader() {
+          //  填入自己 ID、KEY 開始
+          const appId = '32327b82bd1845d6a0a6db5df546a225';
+          const appKey = '3SJ4izVJkK0kTiIfvxkfXUecvSY';
+          //  填入自己 ID、KEY 結束
+          let GMTString = new Date().toGMTString();
+          let ShaObj = new jsSHA('SHA-1', 'TEXT');
+          ShaObj.setHMACKey(appKey, 'TEXT');
+          ShaObj.update('x-date: ' + GMTString);
+          let HMAC = ShaObj.getHMAC('B64');
+          let Authorization = 'hmac username=\"' + appId + '\", algorithm=\"hmac-sha1\", headers=\"x-date\", signature=\"' + HMAC + '\"';
+          return { 'Authorization': Authorization, 'X-Date': GMTString };
+        },
+        getData() {
+          let url = `https://ptx.transportdata.tw/MOTC/v2/Bike/Station/${this.nowCity}?$format=JSON`;
+          axios.get(url, {
+            headers: this.getAuthorizationHeader()
+          })
+            .then((res) => {
+              this.data = res.data;
+              this.getCurrentData();
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+        },
+        getCurrentData() {
+          let url = `https://ptx.transportdata.tw/MOTC/v2/Bike/Availability/${this.nowCity}?$format=JSON`;
+          axios.get(url, {
+            headers: this.getAuthorizationHeader()
+          })
+            .then((res) => {
+              this.currentData = res.data;
+              this.data.forEach((item, index) => {
+                item.AvailableRentBikes = this.currentData[index].AvailableRentBikes;
+                item.AvailableReturnBikes = this.currentData[index].AvailableReturnBikes;
+              });
+              this.getMarker();
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+        },
+        getMap() {
+          this.map = L.map('map').setView([24.1618378, 120.6446744], 5);
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          }).addTo(this.map);
+        },
+        getMarker() {
+          let markers = new L.MarkerClusterGroup().addTo(this.map);
+          this.map.eachLayer((layer) => {
+            if (layer instanceof L.Marker) {
+              this.map.removeLayer(layer);
+            }
+          })
+          this.data.forEach((item) => {
+            const { PositionLat, PositionLon } = item.StationPosition;
+            markers.addLayer(L.marker([PositionLat, PositionLon])).bindPopup(
+              `
+              <div class="space-y-2.5">
+                <h2 class="text-base">${item.StationName.Zh_tw}</h2>
+                <h3 class="text-sm">${item.StationAddress.Zh_tw}</h3>
+                <ul class="flex">
+                  <li class="w-1/2">可借車輛：${item.AvailableRentBikes}</li>
+                  <li class="w-1/2">可停空位：${item.AvailableReturnBikes}</li>
+                </ul>
+              </div>
+              `
+            );
+          });
+          this.map.addLayer(markers);
+        },
+        changeCity() {
+          this.getData();
+        }
+      },
+      created() {
+        this.getData();
+      },
+      mounted() {
+        this.getMap();
+      },
+    }).mount('#app');
+  </script>
+
+</body>
+
+</html>

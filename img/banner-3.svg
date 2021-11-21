@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1440" height="900" viewBox="0 0 1440 900">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#eceef0"/>
+      <stop offset="1" stop-color="#eceef0" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#eceef0"/>
+      <stop offset="1" stop-color="#eceef0" stop-opacity="0.502"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" y2="1.373" xlink:href="#linear-gradient"/>
+    <clipPath id="clip-banner-3">
+      <rect width="1440" height="900"/>
+    </clipPath>
+  </defs>
+  <g id="banner-3" clip-path="url(#clip-banner-3)">
+    <g id="Group_524" data-name="Group 524">
+      <path id="Path_97" data-name="Path 97" d="M134,1087H3l70-70H204Z" transform="translate(74 -225)" fill="url(#linear-gradient)"/>
+      <g id="Group_523" data-name="Group 523">
+        <g id="Group_507" data-name="Group 507" transform="translate(188 219)">
+          <line id="Line_42" data-name="Line 42" y2="38" transform="translate(999 572)" fill="none" stroke="#d8dade" stroke-miterlimit="10" stroke-width="1.225"/>
+          <line id="Line_43" data-name="Line 43" y2="30" transform="translate(978 580)" fill="none" stroke="#d8dade" stroke-miterlimit="10" stroke-width="1.574"/>
+          <rect id="Rectangle_412" data-name="Rectangle 412" width="30" height="50" rx="15" transform="translate(984 524)" fill="#5cb876"/>
+          <rect id="Rectangle_416" data-name="Rectangle 416" width="24" height="40" rx="12" transform="translate(966 550)" fill="#e2e4e8"/>
+        </g>
+        <g id="Group_522" data-name="Group 522">
+          <g id="Group_500" data-name="Group 500" transform="translate(0 -10)">
+            <rect id="Rectangle_475" data-name="Rectangle 475" width="4" height="100" transform="translate(147 702)" fill="#e2e4e8"/>
+            <rect id="Rectangle_476" data-name="Rectangle 476" width="4" height="100" transform="translate(274 702)" fill="#e2e4e8"/>
+            <rect id="Rectangle_477" data-name="Rectangle 477" width="4" height="139" transform="translate(282 698) rotate(90)" fill="#8c919b"/>
+            <rect id="Rectangle_480" data-name="Rectangle 480" width="115" height="4" transform="translate(155 778)" fill="#bec3c8"/>
+            <rect id="Rectangle_478" data-name="Rectangle 478" width="115" height="30" transform="translate(155 706)" fill="#bec3c8"/>
+          </g>
+          <g id="Group_502" data-name="Group 502" transform="translate(-10 -10)">
+            <g id="Group_501" data-name="Group 501">
+              <rect id="Rectangle_471" data-name="Rectangle 471" width="2" height="84" transform="translate(311 718)" fill="#e2e4e8"/>
+              <g id="Rectangle_473" data-name="Rectangle 473" transform="translate(315 721)" fill="#fff" stroke="#e2e4e8" stroke-width="2">
+                <rect width="32" height="40" stroke="none"/>
+                <rect x="1" y="1" width="30" height="38" fill="none"/>
+              </g>
+              <rect id="Rectangle_474" data-name="Rectangle 474" width="24" height="10" transform="translate(319 725)" fill="#ff4128"/>
+              <rect id="Rectangle_482" data-name="Rectangle 482" width="2" height="2" transform="translate(311 716)" fill="#ff4128"/>
+              <circle id="Ellipse_123" data-name="Ellipse 123" cx="4" cy="4" r="4" transform="translate(308 709)" fill="#ff4128"/>
+            </g>
+            <path id="Union_6" data-name="Union 6" d="M.491,37.53c1.223-1.223,4.4-2.236,7.431-2.432l.526-.526L43.02,0h2L10.447,34.573l-.525.526c2.64.2,3.791,1.209,2.568,2.432C11.126,38.894,7.334,40,4.02,40S-.874,38.894.491,37.53Zm13.191-4.191,5.763-5.763,10.7-10.7h30l-10.7,10.7-5.763,5.763Z" transform="translate(268 802)" fill="url(#linear-gradient-2)"/>
+          </g>
+          <g id="公車" transform="translate(50 10)">
+            <path id="Path_77" data-name="Path 77" d="M1135.757,854H1004.243a3,3,0,0,1-2.122-.879l-48-48A3,3,0,0,1,956.243,800h131.514a3,3,0,0,1,2.122.879l48,48A3,3,0,0,1,1135.757,854Z" fill="url(#linear-gradient-3)"/>
+            <rect id="Rectangle_446" data-name="Rectangle 446" width="140" height="54" rx="4" transform="translate(949 742)" fill="#e2e4e8"/>
+            <rect id="Rectangle_447" data-name="Rectangle 447" width="124" height="24" rx="2" transform="translate(955 748)" fill="#bec3c8"/>
+            <rect id="Rectangle_448" data-name="Rectangle 448" width="20" height="40" rx="2" transform="translate(1026 752)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.085"/>
+            <circle id="Ellipse_115" data-name="Ellipse 115" cx="7" cy="7" r="7" transform="translate(963 786)" fill="#646973"/>
+            <circle id="Ellipse_116" data-name="Ellipse 116" cx="7" cy="7" r="7" transform="translate(1061 786)" fill="#646973"/>
+            <path id="Path_78" data-name="Path 78" d="M980,793a10,10,0,0,0-20,0" fill="none" stroke="#5cb876" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.222"/>
+            <path id="Path_79" data-name="Path 79" d="M1078,793a10,10,0,0,0-20,0" fill="none" stroke="#5cb876" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.222"/>
+            <path id="Path_80" data-name="Path 80" d="M954,776.5v5a1.5,1.5,0,0,1-1.5,1.5H950v-8h2.5A1.5,1.5,0,0,1,954,776.5Z" fill="#fff"/>
+          </g>
+          <g id="Group_511" data-name="Group 511" transform="translate(551 156)">
+            <line id="Line_46" data-name="Line 46" y2="35" transform="translate(811 575)" fill="none" stroke="#d8dade" stroke-miterlimit="10" stroke-width="1.225"/>
+            <rect id="Rectangle_414" data-name="Rectangle 414" width="30" height="30" rx="15" transform="translate(796 549)" fill="#5cb876"/>
+          </g>
+          <g id="Group_518" data-name="Group 518" transform="translate(-327 250)">
+            <line id="Line_46-2" data-name="Line 46" y2="35" transform="translate(811 575)" fill="none" stroke="#d8dade" stroke-miterlimit="10" stroke-width="1.225"/>
+            <rect id="Rectangle_414-2" data-name="Rectangle 414" width="30" height="30" rx="15" transform="translate(796 549)" fill="#5cb876"/>
+          </g>
+          <g id="Group_515" data-name="Group 515" transform="translate(-438 182)">
+            <line id="Line_51" data-name="Line 51" y2="36" transform="translate(546 574)" fill="none" stroke="#d8dade" stroke-miterlimit="10" stroke-width="1.225"/>
+            <line id="Line_52" data-name="Line 52" y2="28" transform="translate(525 582)" fill="none" stroke="#d8dade" stroke-miterlimit="10" stroke-width="1.574"/>
+            <rect id="Rectangle_420" data-name="Rectangle 420" width="30" height="50" rx="15" transform="translate(531 530)" fill="#e2e4e8"/>
+            <rect id="Rectangle_421" data-name="Rectangle 421" width="24" height="40" rx="12" transform="translate(513 546)" fill="#5cb876"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
