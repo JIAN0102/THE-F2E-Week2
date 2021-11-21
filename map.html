@@ -72,6 +72,8 @@
 
   <script type="module">
     import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.1.4/vue.esm-browser.min.js';
+    const markers = new L.MarkerClusterGroup();
+    let map = null;
     createApp({
       data() {
         return {
@@ -171,45 +173,35 @@
               console.log(error);
             });
         },
-        getMap() {
-          this.map = L.map('map').setView([24.1618378, 120.6446744], 5);
-          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          }).addTo(this.map);
-        },
         getMarker() {
-          let markers = new L.MarkerClusterGroup().addTo(this.map);
-          this.map.eachLayer((layer) => {
+          markers.eachLayer((layer) => {
             if (layer instanceof L.Marker) {
-              this.map.removeLayer(layer);
+              markers.removeLayer(layer);
             }
-          })
+          });
           this.data.forEach((item) => {
             const { PositionLat, PositionLon } = item.StationPosition;
-            markers.addLayer(L.marker([PositionLat, PositionLon])).bindPopup(
-              `
-              <div class="space-y-2.5">
-                <h2 class="text-base">${item.StationName.Zh_tw}</h2>
-                <h3 class="text-sm">${item.StationAddress.Zh_tw}</h3>
-                <ul class="flex">
-                  <li class="w-1/2">可借車輛：${item.AvailableRentBikes}</li>
-                  <li class="w-1/2">可停空位：${item.AvailableReturnBikes}</li>
-                </ul>
-              </div>
-              `
-            );
+            markers.addLayer(L.marker([PositionLat, PositionLon]).on('click', () => {
+              this.getMarkerDetail(item);
+            }));
           });
-          this.map.addLayer(markers);
+          map.addLayer(markers);
         },
         changeCity() {
           this.getData();
+        },
+        getMarkerDetail(item) {
+          console.log(item);
         }
       },
       created() {
         this.getData();
       },
       mounted() {
-        this.getMap();
+        map = L.map('map').setView([24.1618378, 120.6446744], 10);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
       },
     }).mount('#app');
   </script>
