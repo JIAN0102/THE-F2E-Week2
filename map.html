@@ -43,7 +43,7 @@
     </header>
     <div id="map" class="h-screen"></div>
     <div
-      class="fixed bottom-5 left-1/2 transform -translate-x-1/2 z-9999 shadow-header rounded-full overflow-hidden w-full max-w-120">
+      class="fixed bottom-5 left-1/2 transform -translate-x-1/2 z-9999 shadow-header rounded-full overflow-hidden w-full max-w-120" v-if="!modal">
       <div class="relative">
         <select class="block w-full px-8 py-4 placeholder-gray-200" v-model="nowCity" @change="changeCity">
           <option :value="null">選擇縣市</option>
@@ -59,6 +59,29 @@
           </button>
         </div>
       </div>
+    </div>
+    <div class="fixed bottom-5 left-1/2 transform -translate-x-1/2 z-9999 bg-white text-center w-full max-w-90 rounded-md overflow-hidden" v-if="modal">
+      <div class="relative text-white bg-primary px-4 py-2">
+        <h2>{{ tempData.StationName.Zh_tw }}</h2>
+        <div class="duration-300 absolute top-1/2 right-0 transform -translate-y-1/2 w-10 h-10 cursor-pointer hover:rotate-180" @click="modal=false">
+          <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45 w-4 h-px bg-white"></span>
+          <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -rotate-45 w-4 h-px bg-white"></span>
+        </div>
+      </div>
+      <div class="p-4">
+      <ul class="flex mb-2">
+        <li class="w-1/2">
+          <h3>可租借車數</h3>
+          <span>{{ tempData.AvailableRentBikes }}</span>
+        </li>
+        <li class="w-1/2">
+          <h3>可歸還車數</h3>
+          <span>{{ tempData.AvailableReturnBikes }}</span>
+        </li>
+      </ul>
+      <h3>{{ tempData.StationAddress.Zh_tw }}</h3>
+      <h3>{{ tempData.SrcUpdateTime.replace('T', ' ').replace('+08:00', '') }}</h3>
+    </div>
     </div>
   </div>
 
@@ -79,6 +102,17 @@
         return {
           data: [],
           currentData: [],
+          tempData: {
+            StationName: {
+              Zh_tw: ''
+            },
+            AvailableRentBikes: 0,
+            AvailableReturnBikes: 0,
+            StationAddress: {
+              Zh_tw: ''
+            },
+            SrcUpdateTime: ''
+          },
           map: null,
           cities: [
             {
@@ -127,6 +161,7 @@
             }
           ],
           nowCity: 'Taichung',
+          modal: false
         };
       },
       methods: {
@@ -183,6 +218,7 @@
             const { PositionLat, PositionLon } = item.StationPosition;
             markers.addLayer(L.marker([PositionLat, PositionLon]).on('click', () => {
               this.getMarkerDetail(item);
+              this.modal = true;
             }));
           });
           map.addLayer(markers);
@@ -191,8 +227,8 @@
           this.getData();
         },
         getMarkerDetail(item) {
-          console.log(item);
-        }
+          this.tempData = item;
+        },
       },
       created() {
         this.getData();
