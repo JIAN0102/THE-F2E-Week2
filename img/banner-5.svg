@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1440" height="900" viewBox="0 0 1440 900">
+  <defs>
+    <clipPath id="clip-banner-5">
+      <rect width="1440" height="900"/>
+    </clipPath>
+  </defs>
+  <g id="banner-5" clip-path="url(#clip-banner-5)">
+    <g id="tree">
+      <line id="Line_38" data-name="Line 38" y2="34" transform="translate(49 576)" fill="none" stroke="#d8dade" stroke-miterlimit="10" stroke-width="1.225"/>
+      <rect id="Rectangle_408" data-name="Rectangle 408" width="20" height="30" rx="10" transform="translate(39 563)" fill="#e2e4e8"/>
+      <line id="Line_39" data-name="Line 39" y2="34" transform="translate(1424 576)" fill="none" stroke="#d8dade" stroke-miterlimit="10" stroke-width="1.225"/>
+      <rect id="Rectangle_409" data-name="Rectangle 409" width="20" height="30" rx="10" transform="translate(1414 563)" fill="#5cb876"/>
+      <line id="Line_40" data-name="Line 40" y2="34" transform="translate(446 576)" fill="#eceef0" stroke="#d8dade" stroke-miterlimit="10" stroke-width="1.225"/>
+      <rect id="Rectangle_410" data-name="Rectangle 410" width="20" height="30" rx="10" transform="translate(436 563)" fill="#eceef0"/>
+      <g id="Group_508" data-name="Group 508">
+        <line id="Line_41" data-name="Line 41" y2="34" transform="translate(879 576)" fill="none" stroke="#d8dade" stroke-miterlimit="10" stroke-width="1.225"/>
+        <rect id="Rectangle_411" data-name="Rectangle 411" width="20" height="30" rx="10" transform="translate(869 557)" fill="#e2e4e8"/>
+      </g>
+      <g id="Group_512" data-name="Group 512">
+        <line id="Line_44" data-name="Line 44" y2="35" transform="translate(90 575)" fill="none" stroke="#d8dade" stroke-miterlimit="10" stroke-width="1.225"/>
+        <rect id="Rectangle_413" data-name="Rectangle 413" width="40" height="40" rx="20" transform="translate(70 541)" fill="#eceef0"/>
+      </g>
+      <line id="Line_45" data-name="Line 45" y2="34" transform="translate(790 576)" fill="none" stroke="#d8dade" stroke-miterlimit="10" stroke-width="1.225"/>
+      <g id="Group_510" data-name="Group 510">
+        <line id="Line_46" data-name="Line 46" y2="35" transform="translate(811 575)" fill="none" stroke="#d8dade" stroke-miterlimit="10" stroke-width="1.225"/>
+        <rect id="Rectangle_414" data-name="Rectangle 414" width="30" height="30" rx="15" transform="translate(796 549)" fill="#5cb876"/>
+      </g>
+      <line id="Line_47" data-name="Line 47" y2="38" transform="translate(394 572)" fill="none" stroke="#d8dade" stroke-miterlimit="10" stroke-width="1.225"/>
+      <rect id="Rectangle_415" data-name="Rectangle 415" width="36" height="36" rx="18" transform="translate(376 545)" fill="#e2e4e8"/>
+      <g id="Group_506" data-name="Group 506">
+        <line id="Line_42" data-name="Line 42" y2="38" transform="translate(999 572)" fill="none" stroke="#d8dade" stroke-miterlimit="10" stroke-width="1.225"/>
+        <line id="Line_43" data-name="Line 43" y2="30" transform="translate(978 580)" fill="none" stroke="#d8dade" stroke-miterlimit="10" stroke-width="1.574"/>
+        <rect id="Rectangle_412" data-name="Rectangle 412" width="30" height="50" rx="15" transform="translate(984 524)" fill="#5cb876"/>
+        <rect id="Rectangle_416" data-name="Rectangle 416" width="24" height="40" rx="12" transform="translate(966 550)" fill="#e2e4e8"/>
+      </g>
+      <line id="Line_48" data-name="Line 48" y2="36" transform="translate(183 574)" fill="none" stroke="#d8dade" stroke-miterlimit="10" stroke-width="1.225"/>
+      <line id="Line_49" data-name="Line 49" y2="28" transform="translate(162 582)" fill="none" stroke="#d8dade" stroke-miterlimit="10" stroke-width="1.574"/>
+      <rect id="Rectangle_417" data-name="Rectangle 417" width="30" height="50" rx="15" transform="translate(168 530)" fill="#5cb876"/>
+      <rect id="Rectangle_418" data-name="Rectangle 418" width="24" height="40" rx="12" transform="translate(150 546)" fill="#eceef0"/>
+      <line id="Line_50" data-name="Line 50" y2="38" transform="translate(311 572)" fill="#e2e4e8" stroke="#d8dade" stroke-miterlimit="10" stroke-width="1.225"/>
+      <rect id="Rectangle_419" data-name="Rectangle 419" width="20" height="30" rx="10" transform="translate(301 559)" fill="#5cb876"/>
+      <g id="Group_514" data-name="Group 514">
+        <line id="Line_51" data-name="Line 51" y2="36" transform="translate(546 574)" fill="none" stroke="#d8dade" stroke-miterlimit="10" stroke-width="1.225"/>
+        <line id="Line_52" data-name="Line 52" y2="28" transform="translate(525 582)" fill="none" stroke="#d8dade" stroke-miterlimit="10" stroke-width="1.574"/>
+        <rect id="Rectangle_420" data-name="Rectangle 420" width="30" height="50" rx="15" transform="translate(531 530)" fill="#e2e4e8"/>
+        <rect id="Rectangle_421" data-name="Rectangle 421" width="24" height="40" rx="12" transform="translate(513 546)" fill="#5cb876"/>
+      </g>
+      <line id="Line_53" data-name="Line 53" y2="38" transform="translate(674 572)" fill="none" stroke="#d8dade" stroke-miterlimit="10" stroke-width="1.225"/>
+      <rect id="Rectangle_422" data-name="Rectangle 422" width="20" height="30" rx="10" transform="translate(664 559)" fill="#e2e4e8"/>
+      <rect id="Rectangle_423" data-name="Rectangle 423" width="20" height="30" rx="10" transform="translate(780 563)" fill="#eceef0"/>
+    </g>
+  </g>
+</svg>
