@@ -1,60 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>想去哪裡，隨時隨地。</title>
+    <link rel="stylesheet" href="dist/tailwind.css" />
+    <link rel="stylesheet" href="dist/css/all.min.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>想去哪裡，隨時隨地。</title>
-  <link rel="stylesheet" href="dist/tailwind.css">
-  <link rel="stylesheet" href="dist/css/all.min.css">
-</head>
-
-<body>
-
-  <header class="fixed top-0 left-0 w-full flex justify-between items-center z-9999 px-7.5 py-4">
-    <a href="index.html">
-      <img src="img/logo.svg" alt="logo">
-    </a>
-    <div class="bg-white rounded-full shadow-header">
-      <div class="flex px-4 py-3">
-        <a href="map.html"
-          class="duration-300 flex justify-center items-center text-gray-200 bg-gray-100 rounded-full min-w-37.5 px-4 py-3 mr-2.5 hover:text-white hover:bg-primary">
-          租還 Ubike
-        </a>
-        <a href="map.html"
-          class="duration-300 flex justify-center items-center text-gray-200 bg-gray-100 rounded-full min-w-37.5 px-4 py-3 hover:text-white hover:bg-primary">
-          自行車路線
-        </a>
+  <body>
+    <header
+      class="
+        fixed
+        top-0
+        left-0
+        w-full
+        flex
+        justify-between
+        items-center
+        z-9999
+        px-7.5
+        py-4
+      "
+    >
+      <a href="index.html">
+        <img src="img/logo.svg" alt="logo" />
+      </a>
+      <div class="bg-white rounded-full shadow-header">
+        <div class="flex px-4 py-3">
+          <a
+            href="map.html"
+            class="
+              duration-300
+              flex
+              justify-center
+              items-center
+              text-gray-200
+              bg-gray-100
+              rounded-full
+              min-w-37.5
+              px-4
+              py-3
+              mr-2.5
+              hover:text-white hover:bg-primary
+            "
+          >
+            租還 Ubike
+          </a>
+          <a
+            href="map.html"
+            class="
+              duration-300
+              flex
+              justify-center
+              items-center
+              text-gray-200
+              bg-gray-100
+              rounded-full
+              min-w-37.5
+              px-4
+              py-3
+              hover:text-white hover:bg-primary
+            "
+          >
+            自行車路線
+          </a>
+        </div>
       </div>
-    </div>
-    <a href="javascript:;"
-      class="relative bg-white border-2 border-primary rounded-20 transform duration-300 w-15 h-15 | hover:-translate-y-1">
-      <span class="text-xs text-secondary flex justify-center items-center h-full tracking-2.4 -mr-0.6">附近<br>美食
-      </span>
-    </a>
-  </header>
+      <a
+        href="javascript:;"
+        class="
+          relative
+          bg-white
+          border-2 border-primary
+          rounded-20
+          transform
+          duration-300
+          w-15
+          h-15
+          |
+          hover:-translate-y-1
+        "
+      >
+        <span
+          class="
+            text-xs text-secondary
+            flex
+            justify-center
+            items-center
+            h-full
+            tracking-2.4
+            -mr-0.6
+          "
+          >附近<br />美食
+        </span>
+      </a>
+    </header>
 
-  <main class="h-screen overflow-x-hidden overflow-y-hidden">
-    <h1 class="absolute top-36 left-1/2 transform -translate-x-1/2 text-3xl text-secondary text-center">
-      想去哪裡，隨時隨地。
-    </h1>
-    <div class="relative h-full" id="scene">
-      <img src="img/banner-1.svg" alt="背景圖" class="w-full h-full object-cover" data-depth="0.2">
-      <img src="img/banner-2.svg" alt="背景圖" class="absolute top-0 left-0 w-full h-full object-cover" data-depth="0.4">
-      <img src="img/banner-3.svg" alt="背景圖" class="absolute top-0 left-0 w-full h-full object-cover" data-depth="0.6">
-    </div>
-  </main>
+    <main class="h-screen overflow-x-hidden overflow-y-hidden">
+      <h1
+        class="
+          absolute
+          top-36
+          left-1/2
+          transform
+          -translate-x-1/2
+          text-3xl text-secondary text-center
+        "
+      >
+        想去哪裡，隨時隨地。
+      </h1>
+      <div class="relative h-full" id="scene">
+        <img
+          src="img/banner-1.svg"
+          alt="背景圖"
+          class="w-full h-full object-cover"
+          data-depth="0.2"
+        />
+        <img
+          src="img/banner-2.svg"
+          alt="背景圖"
+          class="absolute top-0 left-0 w-full h-full object-cover"
+          data-depth="0.4"
+        />
+        <img
+          src="img/banner-3.svg"
+          alt="背景圖"
+          class="absolute top-0 left-0 w-full h-full object-cover"
+          data-depth="0.6"
+        />
+      </div>
+    </main>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 
-
-  <script>
-    // parallax
-    var scene = document.getElementById('scene');
-    var parallaxInstance = new Parallax(scene);
-  </script>
-
-</body>
-
+    <script>
+      // parallax
+      parallaxInstance = new Parallax(document.getElementById("scene"), {
+        limitY: 0,
+      });
+    </script>
+  </body>
 </html>
